@@ -1,5 +1,5 @@
 /**
- * mwef_text.c
+ * mwef_text.c - перемещение курсора в конец слова
  *
  * Copyright (c) 2017, Alexander Borodin <aborod@petrsu.ru>
  *
@@ -40,7 +40,7 @@ void mwef_text(text txt){
         && txt->cursor->position < length){
         
         txt->cursor->position++;
-    }
+        }
     }
     
 }

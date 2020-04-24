@@ -1,0 +1,12 @@
+Qt Creator is a cross-platform C++, JavaScript and QML integrated development 
+environment which simplifies GUI application development. 
+It is part of the SDK for the Qt 
+GUI application development framework and uses 
+the Qt API, which encapsulates host OS GUI function calls. 
+It includes a visual debugger and an integrated WYSIWYG GUI layout and forms designer. 
+The editor has features such as syntax 
+
+highlighting and autocompletion. 
+Qt Creator uses the C++ compiler from the GNU Compiler Collection on Linux and FreeBSD. On Windows it can use MinGW or MSVC with the default install and can also use Microsoft Console Debugger when 
+compiled from source code. Clang is also 
+supported. 
