@@ -8,7 +8,7 @@ extern "C" {
 
 TEST(mwef, correct){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStdout();
 
@@ -21,13 +21,13 @@ TEST(mwef, correct){
 
 TEST(mwef, empty){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/empty.txt");
+    load(txt, (char*)"./tests/txt/empty.txt");
     ASSERT_EXIT((mwef(txt),exit(0)),::testing::ExitedWithCode(0),".*");
 }
 
 TEST(mwef, wordend){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStdout();
 
@@ -41,7 +41,7 @@ TEST(mwef, wordend){
 
 TEST(mwef, textend){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
     m((char*)"11", (char*)"12", txt);
 
     ASSERT_EXIT((mwef(txt),exit(0)),::testing::ExitedWithCode(0),".*");
