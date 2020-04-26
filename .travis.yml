@@ -11,7 +11,7 @@ addons:
 script:
   - qmake
   - make
-  - ./tests/tests
+  - ./test/tests
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"

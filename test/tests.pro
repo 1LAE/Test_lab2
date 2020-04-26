@@ -46,4 +46,3 @@ INCLUDEPATH += \
     ../app \
     ../app/text
 
-LIBS += -lstdc++fs
