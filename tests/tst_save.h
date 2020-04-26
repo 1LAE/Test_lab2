@@ -41,42 +41,42 @@ TEST(save, sample_func){
 
 TEST(save, empty){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/empty.txt");
-    ASSERT_EXIT((save(txt, (char*)"../../test/txt/save/save_empty.txt"),exit(0)),::testing::ExitedWithCode(0),".*");
-    std::ifstream file("../../test/txt/save/save_empty.txt");
-    EXPECT_NE(-1, access("../../test/txt/save/save_empty.txt", 0));
+    load(txt, (char*)"./tests/txt/empty.txt");
+    ASSERT_EXIT((save(txt, (char*)"./tests/txt/save/save_empty.txt"),exit(0)),::testing::ExitedWithCode(0),".*");
+    std::ifstream file("./tests/txt/save/save_empty.txt");
+    EXPECT_NE(-1, access("./tests/txt/save/save_empty.txt", 0));
 
-    remove("../../test/txt/save/save_empty.txt");
+    remove("./tests/txt/save/save_empty.txt");
 
 }
 
 TEST(save, expansion){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
-    save(txt, (char*)"../../test/txt/save/save_expansion.txt");
-    EXPECT_NE(-1, access("../../test/txt/save/save_expansion.txt", 0));
+    save(txt, (char*)"./tests/txt/save/save_expansion.txt");
+    EXPECT_NE(-1, access("./tests/txt/save/save_expansion.txt", 0));
 
-    save(txt, (char*)"../../test/txt/save/save_expansion.zip");
-    EXPECT_NE(-1, access("../../test/txt/save/save_expansion.zip", 0));
+    save(txt, (char*)"./tests/txt/save/save_expansion.zip");
+    EXPECT_NE(-1, access("./tests/txt/save/save_expansion.zip", 0));
 
-    save(txt, (char*)"../../test/txt/save/save_expansion.doc");
-    EXPECT_NE(-1, access("../../test/txt/save/save_expansion.doc", 0));
+    save(txt, (char*)"./tests/txt/save/save_expansion.doc");
+    EXPECT_NE(-1, access("./tests/txt/save/save_expansion.doc", 0));
 
-    save(txt, (char*)"../../test/txt/save/save_expansion.abcde");
-    EXPECT_NE(-1, access("../../test/txt/save/save_expansion.abcde", 0));
+    save(txt, (char*)"./tests/txt/save/save_expansion.abcde");
+    EXPECT_NE(-1, access("./tests/txt/save/save_expansion.abcde", 0));
 
-    remove("../../test/txt/save/save_expansion.txt");
-    remove("../../test/txt/save/save_expansion.zip");
-    remove("../../test/txt/save/save_expansion.doc");
-    remove("../../test/txt/save/save_expansion.abcde");
+    remove("./tests/txt/save/save_expansion.txt");
+    remove("./tests/txt/save/save_expansion.zip");
+    remove("./tests/txt/save/save_expansion.doc");
+    remove("./tests/txt/save/save_expansion.abcde");
 }
 
 TEST(save, dir){
     text txt = create_text();
     testing::internal::CaptureStdout();
 
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     save(txt, (char*)"/save_permisson.txt");
     EXPECT_EQ(-1, access("/save_permisson.txt", 0));
@@ -93,7 +93,7 @@ TEST(save, null){
     text txt = create_text();
     testing::internal::CaptureStdout();
 
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
     save(txt, (char*)"/dev/null/save_exist.txt");
 
     std::string output = testing::internal::GetCapturedStdout();
