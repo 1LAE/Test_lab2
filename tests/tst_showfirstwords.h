@@ -8,7 +8,7 @@ extern "C" {
 
 TEST(showfirstwords, sample){
     text txt = create_text();
-    load(txt, (char*)"./tests/txt/for_load.txt");
+    load(txt, (char*)"./tests/test_text.txt");
 
     testing::internal::CaptureStdout();
 
@@ -16,7 +16,7 @@ TEST(showfirstwords, sample){
 
     std::string output = testing::internal::GetCapturedStdout();
 
-    EXPECT_EQ("Qt\nenvironment\nIt\nGUI\nthe\nIt\nThe\n\nhighlighting\nQt\ncompiled\nsupported.\n", output);
+    EXPECT_EQ("In\nDuring\nAmong\nAlso\nfigurine.\n", output);
 }
 
 TEST(showfirstwords, empty){
