@@ -8,7 +8,7 @@ extern "C" {
 
 TEST(showfirstwords, sample){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStdout();
 
@@ -21,7 +21,7 @@ TEST(showfirstwords, sample){
 
 TEST(showfirstwords, empty){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/empty.txt");
+    load(txt, (char*)"./tests/txt/empty.txt");
 
     testing::internal::CaptureStdout();
 

@@ -8,7 +8,7 @@ extern "C" {
 
 TEST(rn_text, correct){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStdout();
     char* line = (char*)"2";
@@ -21,7 +21,7 @@ TEST(rn_text, correct){
 
 TEST(rn_text, nonexist){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
 
     testing::internal::CaptureStderr();
@@ -34,7 +34,7 @@ TEST(rn_text, nonexist){
 
 TEST(rn_text, empty){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/empty.txt");
+    load(txt, (char*)"./tests/txt/empty.txt");
 
     testing::internal::CaptureStdout();
     char* line = (char*)"1";
@@ -46,7 +46,7 @@ TEST(rn_text, empty){
 
 TEST(rn_text, incorrect){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
 
     testing::internal::CaptureStderr();    
@@ -60,7 +60,7 @@ TEST(rn_text, incorrect){
 
 TEST(rn_text, negative){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
 
     testing::internal::CaptureStderr();
@@ -74,7 +74,7 @@ TEST(rn_text, negative){
 TEST(rn_text, fraction){
     text txt = create_text();
 
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStderr();
     char* line = (char*)"3.14159265";

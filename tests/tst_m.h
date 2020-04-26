@@ -16,7 +16,7 @@ extern "C" {
 
 TEST(move_crsr, correct){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStdout();
     char* line = (char*)"2";
@@ -30,7 +30,7 @@ TEST(move_crsr, correct){
 
 TEST(move_crsr, func_textbegin){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStderr();
     testing::internal::CaptureStdout();
@@ -53,7 +53,7 @@ TEST(move_crsr, func_textbegin){
 
 TEST(move_crsr, func_linebegin){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStderr();
     testing::internal::CaptureStdout();
@@ -75,7 +75,7 @@ TEST(move_crsr, func_linebegin){
 
 TEST(move_crsr, func_textend){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStderr();
     testing::internal::CaptureStdout();
@@ -96,7 +96,7 @@ TEST(move_crsr, func_textend){
 
 TEST(move_crsr, func_linetend){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStderr();
     testing::internal::CaptureStdout();
@@ -117,7 +117,7 @@ TEST(move_crsr, func_linetend){
 
 TEST(move_crsr, error){
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
 
     testing::internal::CaptureStdout();
     testing::internal::CaptureStderr();
