@@ -16,7 +16,7 @@ TEST(showfirstwords, sample){
 
     std::string output = testing::internal::GetCapturedStdout();
 
-    EXPECT_EQ("In\nDuring\nAmong\nAlso\nfigurine.\n", output);
+    EXPECT_EQ("In\nDuring\n\nAmong\nAlso\nbe\na\nfine\nfigurine.\n", output);
 }
 
 TEST(showfirstwords, empty){
