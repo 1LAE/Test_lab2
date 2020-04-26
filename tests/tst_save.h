@@ -15,12 +15,12 @@ extern "C" {
 TEST(save, sample_func){
 
     text txt = create_text();
-    load(txt, (char*)"../../test/txt/for_load.txt");
-    save(txt, (char*)"../../test/txt/save/save_sample_func.txt");
+    load(txt, (char*)"./tests/txt/for_load.txt");
+    save(txt, (char*)"./tests/txt/save/save_sample_func.txt");
     std::ifstream saved;
     std::ifstream reference;
-    saved.open("../../test/txt/save/save_sample_func.txt");
-    reference.open("../../test/txt/for_load.txt");
+    saved.open("./tests/txt/save/save_sample_func.txt");
+    reference.open("./tests/txt/for_load.txt");
 
     ASSERT_EQ(sizeof (reference), sizeof (saved));
 
@@ -35,7 +35,7 @@ TEST(save, sample_func){
     }
 
     EXPECT_EQ(true, flag);
-    remove("../../test/txt/save/save_sample_func.txt");
+    remove("./tests/txt/save/save_sample_func.txt");
 }
 
 
