@@ -22,7 +22,7 @@ TEST(rn_text, correct){
 TEST(rn_text, nonexist){
     text txt = create_text();
     load(txt, (char*)"../../test/txt/for_load.txt");
-    freopen("../../test/txt/temp/temp.txt", "w", stdout);
+
 
     testing::internal::CaptureStderr();
     char* line = (char*)"100";
@@ -47,7 +47,7 @@ TEST(rn_text, empty){
 TEST(rn_text, incorrect){
     text txt = create_text();
     load(txt, (char*)"../../test/txt/for_load.txt");
-    freopen("../../test/txt/temp/temp.txt", "w", stdout);
+
 
     testing::internal::CaptureStderr();    
     char* line = (char*)"abc";
@@ -61,7 +61,7 @@ TEST(rn_text, incorrect){
 TEST(rn_text, negative){
     text txt = create_text();
     load(txt, (char*)"../../test/txt/for_load.txt");
-    freopen("../../test/txt/temp/temp.txt", "w", stdout);
+
 
     testing::internal::CaptureStderr();
     char* line = (char*)"-3";
@@ -73,7 +73,7 @@ TEST(rn_text, negative){
 
 TEST(rn_text, fraction){
     text txt = create_text();
-    freopen("../../test/txt/temp/temp.txt", "w", stdout);
+
     load(txt, (char*)"../../test/txt/for_load.txt");
 
     testing::internal::CaptureStderr();

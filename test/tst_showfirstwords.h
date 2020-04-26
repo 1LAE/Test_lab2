@@ -30,7 +30,5 @@ TEST(showfirstwords, empty){
     std::string output = testing::internal::GetCapturedStdout();
 
     EXPECT_EQ("", output);
-
-    remove("../../test/txt/temp/temp.txt");
 }
 

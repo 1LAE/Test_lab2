@@ -42,8 +42,7 @@ TEST(mwef, wordend){
 TEST(mwef, textend){
     text txt = create_text();
     load(txt, (char*)"../../test/txt/for_load.txt");
-    freopen("../../test/txt/temp/temp.txt", "w", stdout);
-
     m((char*)"11", (char*)"12", txt);
+
     ASSERT_EXIT((mwef(txt),exit(0)),::testing::ExitedWithCode(0),".*");
 }

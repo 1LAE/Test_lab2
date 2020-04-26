@@ -54,16 +54,16 @@ TEST(save, expansion){
     text txt = create_text();
     load(txt, (char*)"../../test/txt/for_load.txt");
 
-    ASSERT_EXIT((save(txt, (char*)"../../test/txt/save/save_expansion.txt"),exit(0)),::testing::ExitedWithCode(0),".*");
+    save(txt, (char*)"../../test/txt/save/save_expansion.txt");
     EXPECT_NE(-1, access("../../test/txt/save/save_expansion.txt", 0));
 
-    ASSERT_EXIT((save(txt, (char*)"../../test/txt/save/save_expansion.zip"),exit(0)),::testing::ExitedWithCode(0),".*");
+    save(txt, (char*)"../../test/txt/save/save_expansion.zip");
     EXPECT_NE(-1, access("../../test/txt/save/save_expansion.zip", 0));
 
-    ASSERT_EXIT((save(txt, (char*)"../../test/txt/save/save_expansion.doc"),exit(0)),::testing::ExitedWithCode(0),".*");
+    save(txt, (char*)"../../test/txt/save/save_expansion.doc");
     EXPECT_NE(-1, access("../../test/txt/save/save_expansion.doc", 0));
 
-    ASSERT_EXIT((save(txt, (char*)"../../test/txt/save/save_expansion.abcde"),exit(0)),::testing::ExitedWithCode(0),".*");
+    save(txt, (char*)"../../test/txt/save/save_expansion.abcde");
     EXPECT_NE(-1, access("../../test/txt/save/save_expansion.abcde", 0));
 
     remove("../../test/txt/save/save_expansion.txt");
@@ -78,10 +78,10 @@ TEST(save, dir){
 
     load(txt, (char*)"../../test/txt/for_load.txt");
 
-    ASSERT_EXIT((save(txt, (char*)"/save_permisson.txt"),exit(0)),::testing::ExitedWithCode(0),".*");
+    save(txt, (char*)"/save_permisson.txt");
     EXPECT_EQ(-1, access("/save_permisson.txt", 0));
 
-    ASSERT_EXIT((save(txt, (char*)"./abcde/save_permisson.txt"),exit(0)),::testing::ExitedWithCode(0),".*");
+    save(txt, (char*)"./abcde/save_permisson.txt");
     EXPECT_EQ(-1, access("./abcde/save_permisson.txt", 0));
 
     std::string output = testing::internal::GetCapturedStdout();
@@ -94,8 +94,7 @@ TEST(save, null){
     testing::internal::CaptureStdout();
 
     load(txt, (char*)"../../test/txt/for_load.txt");
-
-    ASSERT_EXIT((save(txt, (char*)"/dev/null/save_exist.txt"),exit(0)),::testing::ExitedWithCode(0),".*");
+    save(txt, (char*)"/dev/null/save_exist.txt");
 
     std::string output = testing::internal::GetCapturedStdout();
 
