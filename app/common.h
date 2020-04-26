@@ -15,6 +15,7 @@
  * корректно подавляя предупреждение вида "unused parameter" */
 #define UNUSED(x) (void)(x)
 
+
 void show(text txt);
 
 void load(text txt, char *filename);

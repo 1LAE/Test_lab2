@@ -11,6 +11,10 @@
 #include "_text.h"
 
 void mwef_text(text txt){
+
+    if(txt == NULL || txt->length == 0){
+        return;
+    }
     
     node* current = txt->begin;
     while(current != txt->cursor->line){
@@ -23,24 +27,9 @@ void mwef_text(text txt){
         && current->contents[txt->cursor->position] != '.'
         && current->contents[txt->cursor->position] != ','
         && current->contents[txt->cursor->position] != '\n' 
+        && current->contents[txt->cursor->position] != EOF
         && txt->cursor->position < length){
         
         txt->cursor->position++;
-    }
-    
-    if(txt->cursor->position == length){
-        current = current->next;
-        int length = strlen(current->contents);
-        
-        while(
-        current->contents[txt->cursor->position] != ' ' 
-        && current->contents[txt->cursor->position] != '.'
-        && current->contents[txt->cursor->position] != ','
-        && current->contents[txt->cursor->position] != '\n' 
-        && txt->cursor->position < length){
-        
-        txt->cursor->position++;
-        }
-    }
-    
+    }    
 }

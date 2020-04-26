@@ -14,7 +14,7 @@
 
 void mwef(text txt){
     
-    mwef_text(txt);
+    mwef_text(txt);   
     show(txt);
     
 }

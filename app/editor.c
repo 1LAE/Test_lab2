@@ -62,6 +62,15 @@ int main()
             }
             continue;
         }
+        
+         if (strcmp(cmd, "save") == 0) {
+            if ((arg = strtok(NULL, " \n")) == NULL) {
+                fprintf(stderr, "Usage: load filename\n");
+            } else {
+                save(txt, arg);
+            }
+            continue;
+        }
 
         /* Выводим текст */
         if (strcmp(cmd, "show") == 0) {
