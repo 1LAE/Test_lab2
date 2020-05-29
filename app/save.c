@@ -30,7 +30,7 @@ void save(text txt, char *filename)
     /* Применяем функцию save_line к каждой строке текста */
     process_forward(txt, save_line, f);
 
-    fclose(f);
+    //fclose(f);
 }
 
 static void save_line(int index, char *contents, int cursor, void *data)
@@ -39,8 +39,8 @@ static void save_line(int index, char *contents, int cursor, void *data)
     assert(contents != NULL);
 
     /* Декларируем неиспользуемые параметры */
-    UNUSED(index);
-    UNUSED(cursor);
+    //UNUSED(index);
+    //UNUSED(cursor);
 
     /* Сохраняем строку в файл */
     FILE* f = (FILE*)data;
